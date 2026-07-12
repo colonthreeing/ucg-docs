@@ -16,7 +16,7 @@ Press on the blue link corresponding to your operating system (pictured: Windows
 ![The download page of GDSDecomp with a large obtrusive red arrow pointing ecstatically at the download link for GDSDecomp's windows release, with the label "Click Here" followed by an exclamation point](../../../assets/getting-started/decompiling/gdsdecomp_download_page.png)
 </details>
 
-You will also need to have a legally-aquired copy of the game. Surprisingly, given that the game is free, it is very simple to acquire this as you can press the download button [on the itch.io page](https://slappyhappy2000.itch.io/uncanny-cat-golf). Unzip it and make sure you know where the `Uncanny Cat Golf.pck` file is.
+You will also need to have a legally-acquired copy of the game. Surprisingly, given that the game is free, it is very simple to acquire this as you can press the download button [on the itch.io page](https://slappyhappy2000.itch.io/uncanny-cat-golf). Unzip it and make sure you know where the `Uncanny Cat Golf.pck` file is.
 
 <details>
 <summary>Can you please point a red arrow to where the pck file is?</summary>

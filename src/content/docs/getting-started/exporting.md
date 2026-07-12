@@ -29,6 +29,6 @@ Now, go to the `Patches` tab, press Add Pack, and locate the `Uncanny Cat Golf.p
 
 Then you can press on the button labeled `Export PCK/ZIP...` and find a good directory for where you'll keep it stored. Before you press the Export button, make sure that "Export As Patch" is enabled at the bottom so that it's only your changes, not the entire game. Name the file `mycoolmod.zip`. Then just press the save button, and your mod is exported!
 
-![It's a file dialog. There is a button labeled export as patch that is circled agressively so you know it's important to press it.](../../../assets/getting-started/exporting/export_as_patch_is_important.png)
+![It's a file dialog. There is a button labeled export as patch that is circled aggressively so you know it's important to press it.](../../../assets/getting-started/exporting/export_as_patch_is_important.png)
 
 Now you can distribute your mod wherever you want! See [Installing Mods](../guides/installing) for how you can install it into the game.
