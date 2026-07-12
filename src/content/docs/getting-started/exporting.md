@@ -17,18 +17,18 @@ You will probably need to download the export templates which will take a couple
 
 The screen should look something like this now:
 
-![The Godot export window, showing Linux selected on the left and various options on the right.](/src/assets/getting-started/exporting/export_menu.png)
+![The Godot export window, showing Linux selected on the left and various options on the right.](../../../assets/getting-started/exporting/export_menu.png)
 
 Navigate to the `Resources` tab and add `mod.json` to the field `Filters to export non-resource files/folders`:
 
-![The resources tab is open to the right, and the section labeled Filters To Export Non Resource Files Slash Folders has the text mod.json inside it as described above.](/src/assets/getting-started/exporting/resources.png)
+![The resources tab is open to the right, and the section labeled Filters To Export Non Resource Files Slash Folders has the text mod.json inside it as described above.](../../../assets/getting-started/exporting/resources.png)
 
 Now, go to the `Patches` tab, press Add Pack, and locate the `Uncanny Cat Golf.pck` file that is in the game directory (see [here](decomp) if you are confused). Select it. The window should now look like this:
 
-![It's like the previous image, but now there's a thing called Base Packs and it has Uncanny Cat Golf.pck inside it.](/src/assets/getting-started/exporting/patches.png)
+![It's like the previous image, but now there's a thing called Base Packs and it has Uncanny Cat Golf.pck inside it.](../../../assets/getting-started/exporting/patches.png)
 
 Then you can press on the button labeled `Export PCK/ZIP...` and find a good directory for where you'll keep it stored. Before you press the Export button, make sure that "Export As Patch" is enabled at the bottom so that it's only your changes, not the entire game. Name the file `mycoolmod.zip`. Then just press the save button, and your mod is exported!
 
-![It's a file dialog. There is a button labeled export as patch that is circled agressively so you know it's important to press it.](/src/assets/getting-started/exporting/export_as_patch_is_important.png)
+![It's a file dialog. There is a button labeled export as patch that is circled agressively so you know it's important to press it.](../../../assets/getting-started/exporting/export_as_patch_is_important.png)
 
 Now you can distribute your mod wherever you want! See [Installing Mods](../guides/installing) for how you can install it into the game.
