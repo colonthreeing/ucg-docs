@@ -1,0 +1,36 @@
+---
+title: UCG Modding Guides
+description: Resources and tutorialsl for making mods with Uncanny Cat Golf!
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: Resources for making mods with Uncanny Cat Golf!
+  image:
+    file: ../../assets/uncanny.gif
+  actions:
+    - text: Making your first mod
+      link: /guides/getting-started/
+      icon: right-arrow
+    - text: Get the game!
+      link: https://slappyhappy2000.itch.io/uncanny-cat-golf
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Other cool things
+
+<CardGrid stagger>
+	<Card title="Join The Discord" icon="discord">
+		Join the [Uncanny Cat Golf Discord server](https://discord.gg/b3H8kQ6br5) for all things (un)canny. Modding stuff happens in `#!!-modding-chat`, check it out!
+	</Card>
+	<Card title="Discover Mods" icon="cloud-download">
+		We don't have a good way to discover mods yet, but you can ask around in the discord server above!
+	</Card>
+	<Card title="Add new mods to your game" icon="add-document">
+		Want to install mods? Click [here](/guides/installing)!
+	</Card>
+	<Card title="Contribute to the Docs" icon="open-book">
+		Want to help make these docs better? Please feel free to make a pull request in [the codeberg repository](https://codeberg.org/colonthreeing/ucg-docs)
+	</Card>
+</CardGrid>

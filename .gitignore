@@ -1,0 +1,25 @@
+# copying https://github.com/withastro/starlight/blob/main/.gitignore
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# Vitest
+__coverage__/
+
+# Playwright
+test-results/
+
+# Vercel output
+.vercel

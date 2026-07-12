@@ -1,0 +1,55 @@
+---
+title: Metadata
+description: How you declare the metadata for your mod.
+sidebar:
+    order: 4
+---
+
+When making a mod, it is important to have the metadata so people know who made it! It should be `mod.json` in the root folder of the project, which by default looks like this:
+
+```json
+{
+	"id": "fogwaves.testmod",
+	"version": "0.1.0",
+	"name": "Mod Loader Test",
+	"author": "fogwaves",
+	"description": "Tests functionality of the mod loading system.",
+	"mod_script": "res://mods/testmod/testmod.gd",
+	"dependencies": {}
+}
+```
+
+For your mod, you should edit it to be what is right for your mod!
+
+```jsonc
+{
+	// The ID of your mod, which should be username.modname to avoid conflicts.
+	"id": "johnuncanny.mycoolmod",
+	// Mod version, update it with new versions of your mod.
+	"version": "0.1.0",
+	// The name of your mod.
+	"name": "My Cool Mod",
+	// Your name.
+	"author": "John Uncanny",
+	// A description of what your mod does.
+	"description": "My super cool mod that adds 50x as many Uncannies!!",
+	// The entrypoint of your mod.
+	"mod_script": "res://mods/mycoolmod/mycoolmod.gd",
+	// IDs of other mods that your mod needs to function.
+	"dependencies": {}
+}
+```
+
+Note how in my example I changed the `mod_script` field's folder. You need to change this to reflect your mod structure. So, for example, if your file stucture looks like this:
+
+import { FileTree } from '@astrojs/starlight/components';
+
+<FileTree>
+- mod.json
+- mods/
+  - **uncanniergolf** \<-- your mod folder
+    - uncanniergolf.gd
+	- assets
+</FileTree>
+
+Then your `mod_script` file should be `res://mods/uncanniergolf/uncanniergolf.gd`.
