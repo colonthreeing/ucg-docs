@@ -23,10 +23,6 @@ Navigate to the `Resources` tab and add `mod.json` to the field `Filters to expo
 
 ![The resources tab is open to the right, and the section labeled Filters To Export Non Resource Files Slash Folders has the text mod.json inside it as described above.](../../../assets/getting-started/exporting/resources.png)
 
-:::note
-If you change any translations, you should also add `*.csv` to the field, or else the game won't load your new text.
-:::
-
 Now, go to the `Patches` tab, press Add Pack, and locate the `Uncanny Cat Golf.pck` file that is in the game directory (see [here](decomp) if you are confused). Select it. The window should now look like this:
 
 ![It's like the previous image, but now there's a thing called Base Packs and it has Uncanny Cat Golf.pck inside it.](../../../assets/getting-started/exporting/patches.png)
@@ -36,3 +32,7 @@ Then you can press on the button labeled `Export PCK/ZIP...` and find a good dir
 ![It's a file dialog. There is a button labeled export as patch that is circled aggressively so you know it's important to press it.](../../../assets/getting-started/exporting/export_as_patch_is_important.png)
 
 Now you can distribute your mod wherever you want! See [Installing Mods](../guides/installing) for how you can install it into the game.
+
+:::note
+Changing translations is not currently supported. We're working on it
+:::
