@@ -7,7 +7,8 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'UCG Modding',
-			social: [{ icon: 'codeberg', label: 'GitHub', href: 'https://github.com/colonthreeing/ucg-docs' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/colonthreeing/ucg-docs' }],
+			favicon: "/favicon.png",
 			sidebar: [
 				{
 					label: 'Getting Started',
@@ -18,6 +19,9 @@ export default defineConfig({
 					items: [{ autogenerate: { directory: 'guides' } }],
 				},
 			],
+			editLink: {
+        		baseUrl: 'https://github.com/colonthreeing/ucg-docs/edit/main/',
+		    },
 		}),
 	],
 });

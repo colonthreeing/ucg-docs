@@ -14,4 +14,4 @@ This guide will help you through making your first mod for Uncanny Cat Golf. It 
 - [Modifying Stuff](modding)
 - [Exporting](exporting)
 
-By the way, these docs are open source. You can help contribute or help report issues on [Codeberg](https://codeberg.org/colonthreeing/ucg-docs).
+By the way, these docs are open source. You can help contribute or help report issues on [Github](https://github.com/colonthreeing/ucg-docs).

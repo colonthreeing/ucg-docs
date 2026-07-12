@@ -24,4 +24,3 @@ test-results/
 # Vercel output
 .vercel
 .astro
-dist
