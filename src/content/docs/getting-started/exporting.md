@@ -32,3 +32,7 @@ Then you can press on the button labeled `Export PCK/ZIP...` and find a good dir
 ![It's a file dialog. There is a button labeled export as patch that is circled aggressively so you know it's important to press it.](../../../assets/getting-started/exporting/export_as_patch_is_important.png)
 
 Now you can distribute your mod wherever you want! See [Installing Mods](../guides/installing) for how you can install it into the game.
+
+:::note
+Changing translations is not currently supported. We're working on it
+:::
