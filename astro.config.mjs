@@ -18,6 +18,10 @@ export default defineConfig({
 					label: 'Guides',
 					items: [{ autogenerate: { directory: 'guides' } }],
 				},
+				{
+					label: 'Resources',
+					items: [{ autogenerate: { directory: 'resources' }}]
+				}
 			],
 			editLink: {
         		baseUrl: 'https://github.com/colonthreeing/ucg-docs/edit/main/',

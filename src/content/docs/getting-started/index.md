@@ -9,7 +9,6 @@ This guide will help you through making your first mod for Uncanny Cat Golf. It 
 
 - [Godot](godot)
 - [Decompilation](decomp)
-- [File Structure](files)
 - [Metadata](metadata)
 - [Modifying Stuff](modding)
 - [Exporting](exporting)
