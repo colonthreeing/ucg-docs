@@ -3,7 +3,7 @@ title: Mod Script Basics
 description: How to start patching the game
 ---
 
-At first, you would probably mod UCG by overriding game assets, such as graphics, scenes, and scripts. This is effective, but prone to conflicts, especially with future game versions. To address that, UCG uses **mod scripts**, which are loaded with `*.zip` mods and provide a better way to change the game.
+At first, you would probably think to mod UCG by overriding game assets, such as graphics, scenes, and scripts. This is effective, but prone to conflicts, especially with future game versions. To address that, UCG uses **mod scripts**, which are loaded with `*.zip` mods and provide a better way to change the game.
 
 Technically, mod scripts are just `.gd` files that represent `Node` instances added to the `Master` scene. From there, you can access all the nodes in the game, including `PThru`, which contains the main gameplay.
 
