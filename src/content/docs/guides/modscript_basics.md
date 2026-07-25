@@ -43,22 +43,9 @@ func _ready() -> void :
 
 As you can see, `master` is also a `Node` instance, so you can traverse the tree, connect signals, and modify child nodes and `master` itself, as in the example above.
 
-## Quick Debug Tip
+## Loading your mod ingame
 
-You will probably want to skip exporting your mod just to test it. One of the easiest ways to add your local mod with a little shim. 
-
-Open `mod_loader.gd`, navigate to `_load_config()` and insert the line in the end of the function:
-
-```gd
-
-func _load_config() -> void :
-	# ...
-	# mind the real id value in mod.json
-	enabled.append("fogwaves.testmod")
-
-```
-
-Just don't forget to remove it later when you are done.
+When you launch the game, you might notice that the things in your mod script aren't called! You have to go into the mods section of the settings and enable your mod. You don't need to export your mod, it should show up automatically. Make sure that mods are enabled!! It's easy to enable your mod without enabling mods in general. The button in the top left corner needs to be pressed. I talked with the devs and this is planned to be changed in the future to not let you change enabled mods when mods aren't enabled because it is indeed quite frustrating.
 
 ## Node Interception 101
 
@@ -69,7 +56,7 @@ func _enter_tree() -> void :
 	# ...
 	if master:
 		# connect the signal
-		master.child_entered_tree.connect("_on_child_added")
+		master.child_entered_tree.connect(_on_child_added)
 
 func _on_child_added(node : Node) -> void :
 	# do something with the node
@@ -82,20 +69,18 @@ Next, run the game, click some buttons, and look at the debug logs to see the no
 testmod: pre-initialization
 testmod: main initialization
 testmod: painting the town red
-testmod: child added BG:<CanvasLayer#120175199645>
-testmod: child added HUD:<CanvasLayer#120242309679>
-testmod: child added HUDMods:<CanvasLayer#120493967799>
-testmod: child added Music:<Node#145257140290>
-testmod: child added SecretKeyAnim:<CanvasLayer#145877897319>
-testmod: child added skeleton:<CanvasLayer#145961783404>
-testmod: child added MenuSelect:<AudioStreamPlayer#145995337838>
-testmod: child added MenuBack:<AudioStreamPlayer#146028892272>
+testmod: child added: BG
+testmod: child added: HUD
+testmod: child added: HUDMods
+testmod: child added: Music
+testmod: child added: SecretKeyAnim
+testmod: child added: skeleton
+testmod: child added: MenuSelect
+testmod: child added: MenuBack
 testmod: post-initialization
-testmod: child added GameLoader:<Node2D#182569669273>
-testmod: child added TitleScreen:<Node2D#738767953836>
-testmod: child added MainMenu:<Node2D#741301313482>
-testmod: child added SettingsMenu:<Node2D#747039113557>
-testmod: child added @Node2D@9:<Node2D#752307148351>
+testmod: child added: GameLoader
+testmod: child added: TitleScreen
+testmod: child added: MainMenu
 ```
 
 Now you can pin down the nodes you want to modify. Look them up in the Godot project and look for the node, its name and properties. 
@@ -105,7 +90,7 @@ For example, to change the text on the title screen:
 ```gd
 func _on_child_added(node: Node):
 	if node.name == "TitleScreen":
-		var em := node.find_child("ClickPrompt") as CustomButton
+		var em := node.find_child("ClickPrompt") as Label
 		if em:
 			em.text = "PLAY MY COOL MOD NOW!"
 			print("testmod: patched the title prompt")
@@ -130,7 +115,7 @@ func _on_child_added(node: Node):
 func _PThru_start(node: PThru):
 	print("testmod: gameplay hai!")
 	# bait the line
-	pthru.child_entered_tree.connect(_PThru_on_child_added)
+	node.child_entered_tree.connect(_PThru_on_child_added)
 
 func _PThru_on_child_added(node: Node):
 	# spread the net
@@ -158,3 +143,63 @@ Then you can take `node`, which is an instance of `Level`, and patch it in the s
 :::note
 TODO: add more details on `get_children`, adding your own nodes, replacing nodes, overriding scripts, etc.
 :::
+
+
+<details>
+<summary>Full code</summary>
+
+```gdscript
+extends Node
+# ^ That is critical, do not remove!
+
+# called when the mod node is instantiated
+# here you can do some behind the scenes setup
+func _init() -> void :
+	print("testmod: pre-initialization")
+
+# called before Master's _enter_tree() function
+# here you can modify Master as you need
+func _enter_tree() -> void :
+	print("testmod: main initialization")
+	# obtaining the master node...
+	var master = get_tree().current_scene as Master 
+	if master:
+		print("testmod: painting the town red")
+		# and modifying it
+		master.modulate = Color.RED
+		master.child_entered_tree.connect(_on_child_added)
+
+func _on_child_added(node : Node) -> void :
+	# do something with the node
+	print("testmod: child added: ", node.name)
+	if node.name == "TitleScreen":
+		var em := node.find_child("ClickPrompt") as Label
+		if em:
+			em.text = "PLAY MY COOL MOD NOW!"
+			print("testmod: patched the title prompt")
+	if node.name == "PThru":
+		_PThru_start(node)
+
+func _PThru_start(node: PThru):
+	print("testmod: gameplay hai!")
+	# bait the line
+	node.child_entered_tree.connect(_PThru_on_child_added)
+
+func _PThru_on_child_added(node: Node):
+	# spread the net
+	if node is Level:
+		# catch the man
+		print("testmod: new PThru level ", node)
+	else:
+		# ...or fish? 
+		print("testmod: new PThru child ", node)
+
+
+# called after Master's initialization and before its _ready() function
+# here you can make final preparations
+func _ready() -> void :
+	print("testmod: post-initialization")
+
+```
+
+</details>
