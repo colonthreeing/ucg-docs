@@ -17,6 +17,9 @@ This guide assumes that you:
  3. have the UCG project ready and open in Godot. If not, [do it beforehand](/getting-started/).
 :::
 
+:::caution
+This mod will not be compatible with other modifier mods, because they also may reply on their own replaced `modifiers.gd`.
+:::
 
 ## Adding the basics
 
