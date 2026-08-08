@@ -3,18 +3,17 @@ title: Making a new modifier
 description: Create a cool NEW modifier that YOU made!!
 ---
 
-
 Making a new modifier is relatively simple!
 In this guide, we will create a simple modifier that adds a new Sprite2D to the player.
 
 ![Canny with cool sunglasses!](../../../assets/guides/modifiers/sunglasses.png)
 
-
 :::note
 This guide assumes that you:
- 1. have some basic understanding of GDScript, signals, and the scene tree.
- 2. know [mod script basics](/guides/modscript_basics/).
- 3. have the UCG project ready and open in Godot. If not, [do it beforehand](/getting-started/).
+
+1. Have some basic understanding of GDScript, signals, and the scene tree.
+2. Know [mod script basics](/guides/modscript_basics/).
+3. Have the UCG project ready and open in Godot. If not, [do it beforehand](/getting-started/).
 :::
 
 :::caution
@@ -132,27 +131,26 @@ Let's test it!
 Here it is! But it kinda lacks a name and description.
 Go to your button scene, and change label text to `GAME_Mod[mod name]`. Replace `[mod name]` with your modifier name from earlier.
 Now, let's add new translation keys in our mod script:
+
 ```gd
 func _init() -> void:
-	var translation := Translation.new()
-	translation.locale = "en"
-	translation.add_message(
-		StringName("GAME_ModCool"), # Replace "Cool" with your modifier name.
-		StringName("Cool mode") # Title
-	)
-	translation.add_message(
-		StringName("GAME_ModCoolD"), # Ditto, but leave D at the end.
-		StringName("Gives Canny cool sunglasses.") # Description
-	)
+ var translation := Translation.new()
+ translation.locale = "en"
+ translation.add_message(
+  StringName("GAME_ModCool"), # Replace "Cool" with your modifier name.
+  StringName("Cool mode") # Title
+ )
+ translation.add_message(
+  StringName("GAME_ModCoolD"), # Ditto, but leave D at the end.
+  StringName("Gives Canny cool sunglasses.") # Description
+ )
 
-	TranslationServer.add_translation(translation)
+ TranslationServer.add_translation(translation)
 ```
+
 :::note
-TODO: add a link to the future guide on how to add new translation keys.
+TODO: add a link to the future guide on how to add new translation keys. In the future this should be easier to do.
 :::
-
-
-
 
 ## Adding new stuff
 
