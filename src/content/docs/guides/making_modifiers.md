@@ -134,22 +134,24 @@ Now, let's add new translation keys in our mod script:
 
 ```gd
 func _init() -> void:
- var translation := Translation.new()
- translation.locale = "en"
- translation.add_message(
-  StringName("GAME_ModCool"), # Replace "Cool" with your modifier name.
-  StringName("Cool mode") # Title
- )
- translation.add_message(
-  StringName("GAME_ModCoolD"), # Ditto, but leave D at the end.
-  StringName("Gives Canny cool sunglasses.") # Description
- )
+	var translation := Translation.new()
+	translation.locale = "en"
+	translation.add_message(
+		StringName("GAME_ModCool"), # Replace "Cool" with your modifier name.
+		StringName("Cool mode") # Title
+	)
+	translation.add_message(
+		StringName("GAME_ModCoolD"), # Ditto, but leave D at the end.
+		StringName("Gives Canny cool sunglasses.") # Description
+	)
 
- TranslationServer.add_translation(translation)
+	TranslationServer.add_translation(translation)
 ```
 
 :::note
-TODO: add a link to the future guide on how to add new translation keys. In the future this should be easier to do.
+TODO: add a link to the future guide on how to add new translation keys.
+In the future this should be easier to do due to changes with the underlying mod loader to
+better allow for translation mods.
 :::
 
 ## Adding new stuff
